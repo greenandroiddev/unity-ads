@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 25
+  buildToolsVersion '27.0.1'
+
+  defaultConfig {
+    applicationId "com.unity3d.ads.example"
+    minSdkVersion 9
+    targetSdkVersion 23
+    versionCode = 2300
+    versionName = "2.3.0"
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+}
+
+dependencies {
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  implementation 'com.android.support:appcompat-v7:25.4.0'
+  implementation project(':lib')
+}
